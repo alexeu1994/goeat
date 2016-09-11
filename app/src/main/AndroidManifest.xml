@@ -15,7 +15,9 @@
 
 
         <activity
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,20 +33,30 @@
 
         </activity>
 
-        <activity android:name=".ModeActivity">
+        <activity android:name=".ModeActivity"
+            android:screenOrientation="portrait">
 
         </activity>
+
+        <receiver android:name=".Broadcaststandart">
+
+            <intent-filter>
+                <action android:name="Spy" />
+            </intent-filter>
+        </receiver>
+
+
         <receiver android:name=".NotificationPublisher">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_CHANGED" />
+                <action android:name="android.intent.action.TIME_TICK" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
 
             </intent-filter>
         </receiver>
-<receiver android:name=".Broadcaststandart">
-    <intent-filter>
-        <action android:name="Spy" />
-    </intent-filter>
-</receiver>
+
     </application>
 
 </manifest>

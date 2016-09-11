@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#FF1D4463"
     tools:context="com.example.alexx.myapplication.MainActivity">
 <!-- 0505 -->
 <!-- проверяем ебучие коментарии -->
@@ -37,7 +37,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#480780"
-        android:text="@string/stats"
+        android:text="@string/options"
         android:textSize="25sp"
 
 

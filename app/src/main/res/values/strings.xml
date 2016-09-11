@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
-<string name="stats">Статистика</string>
+<string name="options">Настройки</string>
 <string name="mode">Режим питания</string>
 <string name="diary">Дневник питания</string>
     татистика
