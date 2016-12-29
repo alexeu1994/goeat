@@ -43,12 +43,12 @@ public class NotificationPublisher extends BroadcastReceiver {
 
 
             int minutehour = h * 60 + minute;
-            // создаем интент и отправляем первый будильник
+
 
             long one = xx * 60 + xx2;
             long futureInMillis = System.currentTimeMillis() + one * 60 * 1000;
 
-            // удаляем ранее сохраненый будильник
+
 
             long zz = (long) (xx3 * 60 - minutehour) * 60 * 1000;
             int count = (24 * 60 - minutehour + xx3 * 60) * 60 * 1000;
@@ -58,14 +58,20 @@ public class NotificationPublisher extends BroadcastReceiver {
 
             long timedorestart = sys + one * 60 * 1000;
 
+/* Аццкий велосипед который проверяет если будильник поподает в интервал времени, при перезагрузке
+            или при выкл вкл кнопкой, будильник прозвинит раньше, если время постановленое будильника в моде
+              еще не прошло. т.е. при перезагрузки будильник прозвенит через оставшееся время, которое было до перезагрузки */
 
-            if (System.currentTimeMillis() < timedorestart) {
+            if (System.currentTimeMillis() < timedorestart && xx4>xx3 && z >= xx3 && z <xx4||
+                    System.currentTimeMillis() < timedorestart && xx4 < xx3 && z >= xx3 || System.currentTimeMillis() < timedorestart &&xx4 < xx3 && z <= xx4) {
+
                 long t = timedorestart - System.currentTimeMillis();
+
                 alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + t, pendingIntent);
             } else {
 
                 if (xx4 > xx3) {
-                    if (z >= xx3 && z <= xx4) {
+                    if (z >= xx3 && z <xx4) {
 
                         alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
                     } else if (z >= xx3 && z >= xx4) {
@@ -87,7 +93,7 @@ public class NotificationPublisher extends BroadcastReceiver {
                         alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
 
                     } else {
-                        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz22, pendingIntent);
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz, pendingIntent);
 
                     }
 

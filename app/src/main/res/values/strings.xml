@@ -1,7 +1,24 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Go eat</string>
 <string name="options">Настройки</string>
 <string name="mode">Режим питания</string>
 <string name="diary">Дневник питания</string>
-    татистика
+<string name="texttitle">Пора кушать</string>
+<string name="text">улыбнись! и преятного тебе аппетита</string>
+<string name="statstext">Текст оповещания</string>
+<string name="modesave">Сохранить</string>
+<string name="modesavetoast">Сохранено</string>
+
+ <string name="othertext">Каждые&#160;</string>
+ <string name="othertext2">&#160;ч&#160;</string>
+ <string name="othertext3">&#160; м</string>
+ <string name="othertext4">С&#160;</string>
+ <string name="othertext5"> &#160;ч до&#160;</string>
+ <string name="othertext6">&#160;ч</string>
+
+ <string name="mainothertext">Напоминать каждые &#160;</string>
+ <string name="mainothertext2"> ч </string>
+ <string name="mainothertext3"> м c </string>
+ <string name="mainothertext4"> ч до </string>
+ <string name="mainothertext5"> ч</string>
 </resources>

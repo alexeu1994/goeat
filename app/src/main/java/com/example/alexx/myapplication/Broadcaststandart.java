@@ -8,6 +8,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
+import android.net.Uri;
 
 import java.util.Calendar;
 
@@ -40,18 +42,23 @@ public class Broadcaststandart extends BroadcastReceiver {
 
         Intent notificationIntent = new Intent(context, MainActivity.class);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 1, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         Notification.Builder build = new Notification.Builder(context);
 
-        build.setContentTitle(ss.getString("texttitle"," "));
-        build.setContentText(ss.getString("text"," "));
+
+        build.setContentTitle(ss.getString("texttitle",context.getString(R.string.texttitle)));
+        build.setContentText(ss.getString("text",context.getString(R.string.text)));
         build.setSmallIcon(R.mipmap.ic_launcher);
-        build.setDefaults(Notification.DEFAULT_SOUND);
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+
+        build.setSound(Uri.parse("android.resource://"+context.getPackageName()+"/"+R.raw.music));
+        build.setDefaults(Notification.DEFAULT_VIBRATE);
         build.setContentIntent(contentIntent);
         build.setAutoCancel(true);
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-
+       
         Notification not = build.build();
         notificationManager.notify(12, not);
 
@@ -62,13 +69,14 @@ public class Broadcaststandart extends BroadcastReceiver {
 
 
 
-        // создаем интент и отправляем первый будильник
 
+
+        int minutehour = h * 60 + minute;
         long one = xx * 60 + xx2;
         long futureInMillis = System.currentTimeMillis() + one * 60 * 1000;
 
         // удаляем ранее сохраненый будильник
-        int minutehour = h * 60 + minute;
+        alarmManager.cancel(pendingIntent);
         long zz = (long) (xx3 * 60 - minutehour) * 60 * 1000;
         int count = (24 * 60 - minutehour + xx3 * 60) * 60 * 1000;
         long zz22 = (long) count;
@@ -77,7 +85,7 @@ public class Broadcaststandart extends BroadcastReceiver {
 
 
         if (xx4 > xx3) {
-            if (z >= xx3 && z <= xx4) {
+            if (z >= xx3 && z < xx4) {
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
             }
@@ -99,8 +107,10 @@ public class Broadcaststandart extends BroadcastReceiver {
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
 
-            } else {
-                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz22, pendingIntent);
+            }
+
+            else {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz, pendingIntent);
 
             }
 
@@ -109,7 +119,6 @@ public class Broadcaststandart extends BroadcastReceiver {
             alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
 
         }
-
 
 
     }

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -30,15 +31,17 @@ public class ModeActivity extends AppCompatActivity {
     NumberPicker number2;
     NumberPicker number3;
     NumberPicker number4;
+    TextView spo;
 
-
+TextView ot ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mode);
         save = (Button) findViewById(R.id.button);
-
+ot= (TextView) findViewById(R.id.textView);
+     spo=(TextView)findViewById(R.id.textView2);
         number = (NumberPicker) findViewById(R.id.numberPicker);
         number2 = (NumberPicker) findViewById(R.id.numberPicker2);
         number3 = (NumberPicker) findViewById(R.id.numberPicker3);
@@ -57,17 +60,31 @@ public class ModeActivity extends AppCompatActivity {
 
     SharedPreferences shar= getSharedPreferences("count",MODE_PRIVATE);
     number.setValue(shar.getInt("time",0));
-    number2.setValue(shar.getInt("time2",0));
+    number2.setValue(shar.getInt("time2",1));
     number3.setValue(shar.getInt("time3",0));
     number4.setValue(shar.getInt("time4",0));
 
-
+        ot.setText(getString(R.string.othertext)+ number.getValue()+getString(R.string.othertext2) +number2.getValue()+getString(R.string.othertext3));
+        spo.setText(getString(R.string.othertext4)+ number3.getValue()+getString(R.string.othertext5) +number4.getValue()+getString(R.string.othertext6));
     }
+
+
+
 
 
     public void Iss(View view) {
 
 // получаем время и кидаем в файл
+        Toast.makeText(getApplicationContext(),"save",Toast.LENGTH_SHORT).show();
+  ot.setText(getString(R.string.othertext)+ number.getValue()+getString(R.string.othertext2) +number2.getValue()+getString(R.string.othertext3));
+       spo.setText(getString(R.string.othertext4)+ number3.getValue()+getString(R.string.othertext5) +number4.getValue()+getString(R.string.othertext6));
+
+    if(number.getValue()==0&&number2.getValue()==0){}
+    else{
+        try{MainActivity a = new MainActivity();
+      a.onOff.setBackgroundResource(R.drawable.buttonon);}catch (Exception e){};
+
+
 
         timeone = number.getValue();
         sp = getSharedPreferences("count", MODE_PRIVATE);
@@ -78,13 +95,12 @@ public class ModeActivity extends AppCompatActivity {
         ed.putInt("time3", number3.getValue());
         ed.putInt("time4", number4.getValue());
         ed.putBoolean("boolean",true);
-        ed.putString("texttitle","Пора кушать");
-        ed.putString("text","улыбнись! и преятного тебе аппетита");
-        ed.apply();
         long sys= System.currentTimeMillis();
         ed.putLong("timesys",sys);
+        ed.apply();
+
         scheduleNotification();
-    }
+    } }
 
 
     public void scheduleNotification() {
@@ -106,14 +122,14 @@ public class ModeActivity extends AppCompatActivity {
         int h = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
         String s = Integer.toString(h) + "" + minute;
-        save.setText(s);
-        int minutehour = h * 60 + minute;
+        
+
 
         // создаем интент и отправляем первый будильник
         Intent notificationIntent = new Intent("Spy");
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-
+        int minutehour = h * 60 + minute;
         long one = xx * 60 + xx2;
         long futureInMillis = System.currentTimeMillis() + one * 60 * 1000;
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -127,19 +143,16 @@ public class ModeActivity extends AppCompatActivity {
 
 
         if (xx4 > xx3) {
-            if (z >= xx3 && z < xx4) {
-                Toast t = Toast.makeText(getApplicationContext(),"1 "+zz+" "+zz22+" "+z,Toast.LENGTH_SHORT);
-                t.show();
+            if (h >= xx3 && z < xx4) {
+
                 alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
             }
-            else if (z >= xx3 && z >= xx4) {
-               Toast t2 = Toast.makeText(getApplicationContext(),"2 "+zz+" "+zz22+" "+z,Toast.LENGTH_SHORT);
-                t2.show();
+            else if (h >= xx3 && z >= xx4) {
+
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz22, pendingIntent);
             } else {
-                Toast t3 = Toast.makeText(getApplicationContext(),"3 "+zz+" "+ zz22+ " "+ z ,Toast.LENGTH_SHORT);
-                t3.show();
+
                 alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz, pendingIntent);
 
             }
@@ -148,24 +161,21 @@ public class ModeActivity extends AppCompatActivity {
         }
         if (xx4 < xx3) {
 
-            if (z >= xx3 || z <= xx4) {
+            if (h >= xx3 || z <= xx4) {
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
-                Toast t4 = Toast.makeText(getApplicationContext(),"4 "+futureInMillis,Toast.LENGTH_SHORT);
-t4.show();
+
             }
 
             else {
-                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz22, pendingIntent);
-Toast t5 = Toast.makeText(getApplicationContext(),"5 " +zz ,Toast.LENGTH_SHORT);
-                t5.show();
+                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + zz, pendingIntent);
+
             }
 
         }
         if (xx4 == xx3) {
             alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
-            Toast t6 = Toast.makeText(getApplicationContext(),"6 " + futureInMillis,Toast.LENGTH_SHORT);
-t6.show();
+
         }
 
 
