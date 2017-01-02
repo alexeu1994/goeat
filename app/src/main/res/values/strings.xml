@@ -1,24 +1,27 @@
 <resources>
     <string name="app_name">Go eat</string>
-<string name="options">Настройки</string>
-<string name="mode">Режим питания</string>
-<string name="diary">Дневник питания</string>
-<string name="texttitle">Пора кушать</string>
-<string name="text">улыбнись! и преятного тебе аппетита</string>
-<string name="statstext">Текст оповещания</string>
-<string name="modesave">Сохранить</string>
-<string name="modesavetoast">Сохранено</string>
+<string name="options">Settings</string>
+<string name="mode">Food time</string>
+<string name="titlelau">Title</string>
+<string name="textlau">Text</string>
 
- <string name="othertext">Каждые&#160;</string>
- <string name="othertext2">&#160;ч&#160;</string>
- <string name="othertext3">&#160; м</string>
- <string name="othertext4">С&#160;</string>
- <string name="othertext5"> &#160;ч до&#160;</string>
- <string name="othertext6">&#160;ч</string>
+<string name="texttitle">Time to eat</string>
+<string name="text">Bon appetit!</string>
+<string name="statstext">Text reminder</string>
+<string name="modesave">Save</string>
+<string name="modesavetoast">Saved</string>
+ <string name="statstextfeedback">Rate in Play Store </string>
+ <string name="statstextfeedbackdown">Your ratings and comments influence the further development of the application</string>
+ <string name="othertext">Every&#160;</string>
+ <string name="othertext2">&#160;hh&#160;</string>
+ <string name="othertext3">&#160; mm</string>
+ <string name="othertext4">from&#160;</string>
+ <string name="othertext5"> &#160;hh to&#160;</string>
+ <string name="othertext6">&#160;mm</string>
 
- <string name="mainothertext">Напоминать каждые &#160;</string>
- <string name="mainothertext2"> ч </string>
- <string name="mainothertext3"> м c </string>
- <string name="mainothertext4"> ч до </string>
- <string name="mainothertext5"> ч</string>
+ <string name="mainothertext">Notify every&#160;</string>
+ <string name="mainothertext2"> hh&#160;</string>
+ <string name="mainothertext3"> mm from&#160;</string>
+ <string name="mainothertext4"> hh to&#160;</string>
+ <string name="mainothertext5"> hh</string>
 </resources>

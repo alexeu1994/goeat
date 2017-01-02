@@ -1,7 +1,9 @@
 package com.example.alexx.myapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -36,7 +38,7 @@ Button ok;
 
         final List<String[]> colorList = new LinkedList<String[]>();
         colorList.add(new String[] { getString(R.string.statstext), "" });
-     //   colorList.add(new String[] { "Тема приложения", "" });
+        colorList.add(new String[] { getString(R.string.statstextfeedback), getString(R.string.statstextfeedbackdown) });
        // colorList.add(new String[] { "Музыка", "" });
 
         // Note - we're specifying android.R.id.text1 as a param, but it's ignored
@@ -118,7 +120,12 @@ Button ok;
                 }
             if (position == 1) {
 
-
+                final String appPackageName = getApplicationContext().getPackageName(); //
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
 
             }
            if (position == 2) {

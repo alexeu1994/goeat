@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Go eat</string>
+<string name="options">Настройки</string>
+<string name="mode">Режим питания</string>
+<string name="texttitle">Пора кушать</string>
+<string name="text">приятного тебе аппетита!</string>
+<string name="statstext">Текст оповещания</string>
+<string name="statstextfeedback">Оценить в Play Store </string>
+<string name="statstextfeedbackdown">Ваши оценки и комментарии влияют на дальнейшую разработку приложения</string>
+
+<string name="modesave">Сохранить</string>
+<string name="modesavetoast">Сохранено</string>
+ <string name="titlelau">Заголовок</string>
+ <string name="textlau">Текст</string>
+
+ <string name="othertext">Каждые&#160;</string>
+ <string name="othertext2">&#160;ч&#160;</string>
+ <string name="othertext3">&#160; м</string>
+ <string name="othertext4">С&#160;</string>
+ <string name="othertext5"> &#160;ч до&#160;</string>
+ <string name="othertext6">&#160;ч</string>
+
+ <string name="mainothertext">Напоминать каждые &#160;</string>
+ <string name="mainothertext2"> ч&#160;</string>
+ <string name="mainothertext3"> м c&#160;</string>
+ <string name="mainothertext4"> ч до&#160;</string>
+ <string name="mainothertext5"> ч</string>
+</resources>

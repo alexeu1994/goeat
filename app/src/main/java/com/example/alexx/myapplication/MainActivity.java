@@ -85,12 +85,12 @@ onoffmode();
         text5 = (TextView)findViewById(R.id.textView5);
 
         SharedPreferences shar = getSharedPreferences("count",MODE_PRIVATE);
-        int time = shar.getInt("time",0);
+        int time = shar.getInt("time",2);
         int time2 =   shar.getInt("time2",0);
-        int time3 =    shar.getInt("time3",0);
-        int time4 =    shar.getInt("time4",0);
+        int time3 =    shar.getInt("time3",8);
+        int time4 =    shar.getInt("time4",21);
 
-        text5.setText(getString(R.string.mainothertext)+ time + " ч " + time2+" м c " +time3+ " ч до " +time4+" ч"  );
+        text5.setText(getString(R.string.mainothertext)+ time + getString(R.string.mainothertext2) + time2+getString(R.string.mainothertext3) +time3+ getString(R.string.mainothertext4) +time4+getString(R.string.mainothertext5)  );
 
 
         onoffmode();

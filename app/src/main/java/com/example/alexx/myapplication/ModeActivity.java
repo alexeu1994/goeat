@@ -59,10 +59,10 @@ ot= (TextView) findViewById(R.id.textView);
 
 
     SharedPreferences shar= getSharedPreferences("count",MODE_PRIVATE);
-    number.setValue(shar.getInt("time",0));
-    number2.setValue(shar.getInt("time2",1));
-    number3.setValue(shar.getInt("time3",0));
-    number4.setValue(shar.getInt("time4",0));
+    number.setValue(shar.getInt("time",2));
+    number2.setValue(shar.getInt("time2",0));
+    number3.setValue(shar.getInt("time3",8));
+    number4.setValue(shar.getInt("time4",21));
 
         ot.setText(getString(R.string.othertext)+ number.getValue()+getString(R.string.othertext2) +number2.getValue()+getString(R.string.othertext3));
         spo.setText(getString(R.string.othertext4)+ number3.getValue()+getString(R.string.othertext5) +number4.getValue()+getString(R.string.othertext6));
@@ -75,7 +75,7 @@ ot= (TextView) findViewById(R.id.textView);
     public void Iss(View view) {
 
 // получаем время и кидаем в файл
-        Toast.makeText(getApplicationContext(),"save",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),getString(R.string.modesavetoast),Toast.LENGTH_SHORT).show();
   ot.setText(getString(R.string.othertext)+ number.getValue()+getString(R.string.othertext2) +number2.getValue()+getString(R.string.othertext3));
        spo.setText(getString(R.string.othertext4)+ number3.getValue()+getString(R.string.othertext5) +number4.getValue()+getString(R.string.othertext6));
 
