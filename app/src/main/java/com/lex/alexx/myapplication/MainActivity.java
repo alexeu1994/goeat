@@ -1,4 +1,4 @@
-package com.example.alexx.myapplication;
+package com.lex.alexx.myapplication;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -85,7 +85,7 @@ onoffmode();
         text5 = (TextView)findViewById(R.id.textView5);
 
         SharedPreferences shar = getSharedPreferences("count",MODE_PRIVATE);
-        int time = shar.getInt("time",2);
+        int time = shar.getInt("time",3);
         int time2 =   shar.getInt("time2",0);
         int time3 =    shar.getInt("time3",8);
         int time4 =    shar.getInt("time4",21);
@@ -100,14 +100,14 @@ onoffmode();
 
     public void onoffmode(){
     SharedPreferences as = getSharedPreferences("count",MODE_PRIVATE);
-    if (as.getBoolean("boolean",true)==true)
+    if (as.getBoolean("boolean",false)==true)
     {onOff.setBackgroundResource(R.drawable.buttonon);}
     else{onOff.setBackgroundResource(R.drawable.buttonof);}}
 
     public void dsf(View view) {
         SharedPreferences ss = getSharedPreferences("count",MODE_PRIVATE);
 
-       Boolean b= ss.getBoolean("boolean",true);
+       Boolean b= ss.getBoolean("boolean",false);
             if (b==false){
                 onOff.setBackgroundResource(R.drawable.buttonon);
 

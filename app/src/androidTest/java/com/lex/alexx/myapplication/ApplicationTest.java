@@ -1,4 +1,4 @@
-package com.example.alexx.myapplication;
+package com.lex.alexx.myapplication;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

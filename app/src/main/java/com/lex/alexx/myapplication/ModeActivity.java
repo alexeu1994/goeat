@@ -1,4 +1,4 @@
-package com.example.alexx.myapplication;
+package com.lex.alexx.myapplication;
 
 import android.app.AlarmManager;
 import android.app.NotificationManager;
@@ -59,7 +59,7 @@ ot= (TextView) findViewById(R.id.textView);
 
 
     SharedPreferences shar= getSharedPreferences("count",MODE_PRIVATE);
-    number.setValue(shar.getInt("time",2));
+    number.setValue(shar.getInt("time",3));
     number2.setValue(shar.getInt("time2",0));
     number3.setValue(shar.getInt("time3",8));
     number4.setValue(shar.getInt("time4",21));
@@ -111,10 +111,10 @@ ot= (TextView) findViewById(R.id.textView);
 
         // вытаскиваем данные из файла
         SharedPreferences ss = getSharedPreferences("count", MODE_PRIVATE);
-        int xx = ss.getInt("time", 0);
+        int xx = ss.getInt("time", 3);
         int xx2 = ss.getInt("time2", 0);
-        int xx3 = ss.getInt("time3", 0);
-        int xx4 = ss.getInt("time4", 0);
+        int xx3 = ss.getInt("time3", 8);
+        int xx4 = ss.getInt("time4", 21);
 
 
         Calendar cal = Calendar.getInstance();

@@ -1,4 +1,4 @@
-package com.example.alexx.myapplication;
+package com.lex.alexx.myapplication;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -30,10 +30,10 @@ public class NotificationPublisher extends BroadcastReceiver {
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
 
-            int xx = ss.getInt("time", 0);
+            int xx = ss.getInt("time", 3);
             int xx2 = ss.getInt("time2", 0);
-            int xx3 = ss.getInt("time3", 0);
-            int xx4 = ss.getInt("time4", 0);
+            int xx3 = ss.getInt("time3", 8);
+            int xx4 = ss.getInt("time4", 21);
             long sys = ss.getLong("timesys", 0);
 
 

@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF1D4463"
-    tools:context="com.example.alexx.myapplication.MainActivity"
+    tools:context="com.lex.alexx.myapplication.MainActivity"
     android:clickable="true">
 <!-- 0505 -->
 <!-- проверяем ебучие коментарии -->
     <Button
         android:id="@+id/buttonn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/buttonof"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

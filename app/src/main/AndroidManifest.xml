@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="internalOnly"
-    package="com.example.alexx.myapplication">
+    package="com.lex.alexx.myapplication">
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.QUICKBOOT_POWERON" />
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -16,7 +16,7 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.lex.alexx.myapplication.MainActivity"
             android:screenOrientation="portrait">
 
 
@@ -26,20 +26,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StatsActivity">
+        <activity android:name="com.lex.alexx.myapplication.StatsActivity">
 
         </activity>
 
-        <activity android:name=".DiaryActivity">
+        <activity android:name="com.lex.alexx.myapplication.DiaryActivity">
 
         </activity>
 
-        <activity android:name=".ModeActivity"
+        <activity android:name="com.lex.alexx.myapplication.ModeActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <receiver android:name=".Broadcaststandart">
+        <receiver android:name="com.lex.alexx.myapplication.Broadcaststandart">
 
             <intent-filter>
                 <action android:name="Spy" />
@@ -47,7 +47,7 @@
         </receiver>
 
 
-        <receiver android:name=".NotificationPublisher">
+        <receiver android:name="com.lex.alexx.myapplication.NotificationPublisher">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIME_CHANGED" />
