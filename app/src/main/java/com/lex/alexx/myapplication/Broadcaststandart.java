@@ -50,10 +50,17 @@ public class Broadcaststandart extends BroadcastReceiver {
         build.setContentText(ss.getString("text",context.getString(R.string.text)));
         build.setSmallIcon(R.mipmap.ic_launcher);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+String music = context.getString(R.string.statsmusic1);
+
+        if(ss.getString("namemusic","").equals(music)){
+            build.setSound(Uri.parse("android.resource://"+context.getPackageName()+"/"+R.raw.music));
+            build.setDefaults(Notification.DEFAULT_VIBRATE);
+        }
+        else{
+            build.setDefaults(Notification.DEFAULT_ALL);
+        }
 
 
-        build.setSound(Uri.parse("android.resource://"+context.getPackageName()+"/"+R.raw.music));
-        build.setDefaults(Notification.DEFAULT_VIBRATE);
         build.setContentIntent(contentIntent);
         build.setAutoCancel(true);
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

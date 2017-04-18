@@ -7,7 +7,9 @@
 <string name="statstext">Текст оповещания</string>
 <string name="statstextfeedback">Оценить в Play Store </string>
 <string name="statstextfeedbackdown">Ваши оценки и комментарии влияют на дальнейшую разработку приложения</string>
-
+ <string name="statsmusic">Музыка</string>
+ <string name="statsmusicdefolut">По умолчанию</string>
+ <string name="statsmusic1">Номер 1</string>
 <string name="modesave">Сохранить</string>
 <string name="modesavetoast">Сохранено</string>
  <string name="titlelau">Заголовок</string>

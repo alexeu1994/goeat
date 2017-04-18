@@ -8,6 +8,9 @@
 <string name="texttitle">Time to eat</string>
 <string name="text">Bon appetit!</string>
 <string name="statstext">Text reminder</string>
+<string name="statsmusic">Music</string>
+<string name="statsmusicdefolut">Default</string>
+<string name="statsmusic1">Music 1</string>
 <string name="modesave">Save</string>
 <string name="modesavetoast">Saved</string>
  <string name="statstextfeedback">Rate in Play Store </string>

@@ -25,6 +25,7 @@ import java.util.List;
  */
 public class StatsActivity extends AppCompatActivity {
     ListView list;
+    SharedPreferences sp;
 Button ok;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,14 @@ Button ok;
 
         list =(ListView) findViewById(R.id.list22);
 
+        sp = getSharedPreferences("count",MODE_PRIVATE);
 
 
 
         final List<String[]> colorList = new LinkedList<String[]>();
         colorList.add(new String[] { getString(R.string.statstext), "" });
         colorList.add(new String[] { getString(R.string.statstextfeedback), getString(R.string.statstextfeedbackdown) });
-       // colorList.add(new String[] { "Музыка", "" });
+       colorList.add(new String[] { getString(R.string.statsmusic), sp.getString("namemusic","") });
 
         // Note - we're specifying android.R.id.text1 as a param, but it's ignored
         // because we override getView(). That param usually tells ArrayAdapter
@@ -99,7 +101,6 @@ Button ok;
  builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
      @Override
      public void onClick(DialogInterface dialogInterface, int i) {
-         SharedPreferences sp = getSharedPreferences("count",MODE_PRIVATE);
          SharedPreferences.Editor ed = sp.edit();
          ed.putString("texttitle",userInput.getText().toString());
          ed.putString("text",userInput2.getText().toString());
@@ -129,7 +130,9 @@ Button ok;
 
             }
            if (position == 2) {
-
+Intent inten= new Intent(StatsActivity.this,Musicmode.class);
+               startActivity(inten);
+               finish();
             }
 
 
