@@ -40,8 +40,9 @@ Button ok;
 
         final List<String[]> colorList = new LinkedList<String[]>();
         colorList.add(new String[] { getString(R.string.statstext), "" });
+        colorList.add(new String[] { getString(R.string.statsmusic), sp.getString("namemusic",getString(R.string.statsmusicdefolut)) });
         colorList.add(new String[] { getString(R.string.statstextfeedback), getString(R.string.statstextfeedbackdown) });
-       colorList.add(new String[] { getString(R.string.statsmusic), sp.getString("namemusic","") });
+
 
         // Note - we're specifying android.R.id.text1 as a param, but it's ignored
         // because we override getView(). That param usually tells ArrayAdapter
@@ -119,7 +120,14 @@ Button ok;
                 alert.show();
 
                 }
+
             if (position == 1) {
+                Intent inten= new Intent(StatsActivity.this,Musicmode.class);
+                startActivity(inten);
+                finish();
+            }
+
+            if (position == 2) {
 
                 final String appPackageName = getApplicationContext().getPackageName(); //
                 try {
@@ -129,11 +137,7 @@ Button ok;
                 }
 
             }
-           if (position == 2) {
-Intent inten= new Intent(StatsActivity.this,Musicmode.class);
-               startActivity(inten);
-               finish();
-            }
+
 
 
 

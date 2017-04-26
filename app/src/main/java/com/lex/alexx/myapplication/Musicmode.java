@@ -43,6 +43,7 @@ ListView listView;
 
                     ed.putString("namemusic",getString(R.string.statsmusicdefolut));
                     startActivity(new Intent(Musicmode.this,StatsActivity.class));
+                    ed.apply();
                     finish();
                 }
 
@@ -50,9 +51,10 @@ ListView listView;
 
                     ed.putString("namemusic",getString(R.string.statsmusic1));
                     startActivity(new Intent(Musicmode.this,StatsActivity.class));
+                    ed.apply();
                     finish();
                 }
-                ed.apply();
+            
             }
         });
     }
